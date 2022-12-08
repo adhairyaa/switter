@@ -1,0 +1,46 @@
+.landing {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+/* #6D67E4 */
+.landing img {
+  width: 50%;
+  height: 100vh;
+  object-fit: fill;
+  overflow: hidden;
+}
+
+.landing_button {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+.landing_button button {
+  background-color: #6d67e4;
+  color: white;
+  border: none;
+  width: 9rem;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.landing_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  
+}
+.landing_title{
+    margin-top:0;
+}
+.landing_name{
+    margin-bottom:0;
+    margin-right: 220px;
+}
