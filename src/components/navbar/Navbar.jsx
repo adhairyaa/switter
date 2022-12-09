@@ -6,7 +6,7 @@ function Navbar() {
     
       <div className={styles.navbar}>
         <i class="fa-sharp fa-solid fa-cookie"></i>
-        <div className={styles.navbar_items}>Home</div>
+        <Link to="/feed"><div className={styles.navbar_items}>Home</div></Link>
         <div className={styles.navbar_items}>Explore</div>
         <div className={styles.navbar_items}>Notifications</div>
         <Link to="/profile"> <div className={styles.navbar_items}>Profile</div></Link>

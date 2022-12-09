@@ -20,13 +20,9 @@ body{
 button{
   cursor: pointer;
 }
-Link {
-  text-decoration: none;
-  
-}
-link{
-  text-decoration: none;
-}
+
+
 a{
   text-decoration: none;
+  
 }

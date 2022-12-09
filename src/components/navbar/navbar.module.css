@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #c6c4e9;
+    background-color: #d4d4e1;
     position: fixed;
     left: 0;
     top:0;
@@ -7,7 +7,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: 3rem;
+    font-size: 2.5rem;
     align-items:flex-start ;
     box-shadow: 0 0 9px #6d67e4
 
@@ -24,6 +24,6 @@
     margin-top: 40px;
 }
 .userData{
-    font-size: 1.5rem;
+    font-size: 1rem;
     
 }

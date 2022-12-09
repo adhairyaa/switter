@@ -10,8 +10,7 @@ function App() {
   
   return (
     <main className="App">
-      <Navbar/>
-      <Userbar/>
+      
      <Router/>
      
   
