@@ -9,69 +9,74 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: uuid(),
-    content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-    likes: {
-      likeCount: 0,
-      likedBy: [],
-      dislikedBy: [],
+    content: " taque earum riores repellat.",
+    likes: [],
+    user: {
+      _id: uuid(),
+      name: "Tich",
+      username: "Tichi",
+      password: "adarshBalika123",
+      userImage: "landing.jpg",
     },
-    username: "adarshbalika",
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
-    comments: [
-      {
-        _id: uuid(),
-        username: "shubhamsoni",
-        text: "Interesting",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-      {
-        _id: uuid(),
-        username: "sohamshah",
-        text: "Wow!",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
   },
   {
     _id: uuid(),
-    content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-    likes: {
-      likeCount: 0,
-      likedBy: [],
-      dislikedBy: [],
+    content: " Caio people.",
+    likes: [],
+    user: {
+      _id: uuid(),
+      name: "dhairya",
+      username: "weare",
+      password: "adarshBalika123",
+      userImage: "landing.jpg",
     },
-    username: "shubhamsoni",
-
-    comments: [
-      {
-        _id: uuid(),
-        username: "shubhamsoni",
-        text: "Interesting",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-      {
-        _id: uuid(),
-        username: "sohamshah",
-        text: "Wow!",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
+  },
+  {
+    _id: uuid(),
+    content: "Testing here",
+    likes: [],
+    user: {
+      _id: uuid(),
+      name: "Test",
+      username: "NPC",
+      password: "adarshBalika123",
+      userImage: "landing.jpg",
+    },
+  },
+  {
+    _id: uuid(),
+    content: " what is up I am here",
+    likes: [],
+    user: {
+      _id: uuid(),
+      name: "Kent",
+      username: "dods",
+      password: "adarshBalika123",
+      userImage: "landing.jpg",
+    },
+  },
+  {
+    _id: uuid(),
+    content: "mustang is here",
+    likes: [],
+    user: {
+      _id: uuid(),
+      name: "Robin",
+      username: "cars2",
+      password: "adarshBalika123",
+      userImage: "landing.jpg",
+    },
+  },
+  {
+    _id: uuid(),
+    content: " sweeter is better",
+    likes: [],
+    user: {
+      _id: uuid(),
+      name: "sweet",
+      username: "sweet",
+      password: "adarshBalika123",
+      userImage: "landing.jpg",
+    },
   },
 ];

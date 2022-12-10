@@ -1,28 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
-  user: [],
+  user:[],
+  status: "idle",
 };
+
+export const getUsers = createAsyncThunk("usersData/getUsers", async() => {
+   const response = await axios.get("/api/users");
+   return response.data
+});
 export const userSlice = createSlice({
-  name: "users",
+  name: "usersData",
   initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
+  reducers: {},
+  extraReducers: {
+    [getUsers.pending]: (state) => {
+      state.status = "loading";
     },
-    getUsers: async (state) => {
-      try {
-        const response = await axios.get("api/users");
-        const data = await response.json();
-        state.user = data;
-      } catch (error) {
-        console.log(error);
-      }
+    [getUsers.fulfilled]: (state, action) => {
+        state.user = action.payload;
+        state.status = "fulfilled";
+      
     },
+    [getUsers.rejected]: (state) => {
+      state.status = "error";
+    }
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { getUsers } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -10,7 +10,7 @@ function Router() {
         {/* <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Sign-Up />} /> */}
         <Route path="/feed" element={<Feed />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:username" element={<Profile />} />
 
 
 
