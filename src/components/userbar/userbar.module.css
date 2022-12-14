@@ -7,8 +7,22 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: 3rem;
+    font-size: 2.5rem;
     align-items:flex-start ;
     box-shadow: 0 0 9px #6d67e4
 
+}
+.userbarUsers img{
+width: 3rem;
+height: 3rem;
+border-radius: 50%;
+}
+.userbarUsers{
+    display: flex;
+    margin-left: 10px;
+}
+.userbarUsers p{
+font-size: 1rem;
+margin-top: 0;
+margin-left: 1.5rem;
 }

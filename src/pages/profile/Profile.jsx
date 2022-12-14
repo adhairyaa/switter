@@ -6,56 +6,67 @@ import Userbar from "../../components/userbar/Userbar";
 import styles from "./profile.module.css";
 import { getPosts } from "../../features/posts/postSlice";
 import { getUsers } from "../../features/user/userSlice";
+
 function Profile() {
   const userOnProfile = useParams();
   const dispatch = useDispatch();
   const { posts, status } = useSelector((state) => state.posts);
+  const { user } = useSelector((state) => state.usersData);
+
   useEffect(() => {
+    dispatch(getUsers());
     dispatch(getPosts());
   }, [dispatch]);
 
-  
-  
   if (status === "loading" || status === "idle") {
-    return <div>loading</div>;
-  } else {
-    let currentUserOnProfile = posts.posts.filter(
-      (post) => post.user.username===userOnProfile.username
+    return (
+      <div>
+        <Navbar />
+        <Userbar />
+        loading...
+      </div>
     );
-console.log(currentUserOnProfile)
-console.log(userOnProfile)
-// console.log(posts.posts[0].user.username)
+  } else {
+    let currentPosts = posts.posts.filter(
+      (post) => post.user.username === userOnProfile.username
+    );
+
+    let currentUserOnProfile = user.users.filter(
+      (user) => user.username === userOnProfile.username
+    );
+    console.log(currentPosts);
+
     return (
       <div className={styles.profile}>
         <Navbar />
         <Userbar />
 
         <div className={styles.userProfile}>
-          <img src="Landing.jpg" alt="profileImage"></img>
+          <img src="landing.jpg" alt="profileImage"></img>
           <div className={styles.userName}>
-            <p>dhairya</p>
-            <p>@guest</p>
+            <p>{currentUserOnProfile[0].name}</p>
+            <p>@{currentUserOnProfile[0].username}</p>
           </div>
-          <p>hey i am dhairya</p>
+          <p>{currentUserOnProfile[0].bio}</p>
           <div>
-            <p>following</p>
-            <p>followers</p>
+            <p>followers{currentUserOnProfile[0].followers}</p>
+            <p>following{currentUserOnProfile[0].following}</p>
           </div>
         </div>
-        <div className={styles.userPosts}>
-          {User.map((user) => (<div className={styles.userTweets}>
-        <div className={styles.userInfo}>
-          <img src="landing.jpg" alt='userimage'></img>
-          <div>
-          <p>{user.name}{"@"+ user.username}</p>
-          <p>aa</p>
-          <i class="fa-solid fa-heart"></i>
+        {currentPosts[0].content===null?<p>nothing to show here...</p>:(
+        currentPosts.map((user) => (
+          <div className={styles.userTweets}>
+            <div className={styles.userInfo}>
+              <img src="landing.jpg" alt="userimage"></img>
+              <div>
+                <p>{"@" + user.user.username}</p>
+                <p>{user.content}</p>
+                <i class="fa-solid fa-heart"></i>
+                {user.likes}
+              </div>
+            </div>
           </div>
-        </div>
-
-      </div>
-      ))} 
-        </div>
+        )))}
       </div>
     );
   }

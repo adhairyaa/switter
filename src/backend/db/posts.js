@@ -10,7 +10,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " taque earum riores repellat.",
-    likes: [],
+    likes: 3,
     user: {
       _id: uuid(),
       name: "Tich",
@@ -22,7 +22,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " Caio people.",
-    likes: [],
+    likes: 3,
     user: {
       _id: uuid(),
       name: "dhairya",
@@ -34,7 +34,7 @@ export const posts = [
   {
     _id: uuid(),
     content: "Testing here",
-    likes: [],
+    likes: 3,
     user: {
       _id: uuid(),
       name: "Test",
@@ -46,7 +46,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " what is up I am here",
-    likes: [],
+    likes: 3,
     user: {
       _id: uuid(),
       name: "Kent",
@@ -58,7 +58,7 @@ export const posts = [
   {
     _id: uuid(),
     content: "mustang is here",
-    likes: [],
+    likes: 3,
     user: {
       _id: uuid(),
       name: "Robin",
@@ -70,7 +70,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " sweeter is better",
-    likes: [],
+    likes: 3,
     user: {
       _id: uuid(),
       name: "sweet",

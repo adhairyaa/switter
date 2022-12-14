@@ -5,19 +5,21 @@ import styles from "./feed.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {getPosts} from '../../features/posts/postSlice'
+import LikeButton from "../../components/likebutton/LikeButton";
 function Feed() {
-  const  {posts}  = useSelector((state) => state.posts);
+  const  {posts ,status}  = useSelector((state) => state.posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPosts());
-  }, []);
-  console.log(posts.posts);
+  }, [dispatch]);
+  
 
   return (
     <div>
       <Navbar />
       <Userbar />
+      {(status==="fulfilled")&&(
       <div className={styles.feed}>
         <div className={styles.postTweet}>
           <div>
@@ -26,7 +28,7 @@ function Feed() {
           </div>
           <button>Sweet</button>
         </div>
-        {posts.posts.posts.map((user) => (
+        {posts.posts.map((user) => (
           <Link to={`/profile/${user.user.username}`}> 
           <div className={styles.userTweets}>
             <div className={styles.userInfo}>
@@ -37,12 +39,12 @@ function Feed() {
                   {"@" + user.user.username}
                 </p>
                 <p>{user.content}</p>
-                <i class="fa-solid fa-heart">{user.likes.length}</i>
+                <LikeButton/>{' '+ user.likes}
               </div>
             </div>
           </div></Link>
         ))}
-      </div>
+      </div>)}
     </div>
   );
 }
