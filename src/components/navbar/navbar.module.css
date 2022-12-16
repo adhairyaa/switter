@@ -8,13 +8,15 @@
     display: flex;
     flex-direction: column;
     font-size: 2rem;
-    align-items:flex-start !important;
-    box-shadow: 0 0 9px #9793dd
-    
+   
+    box-shadow: 0 0 9px #9793dd;
+    justify-content: space-between;
+   
 }
 .navbar div{
     margin-top: 20px;
-    margin-left: 80px;
+ 
+   
     cursor:pointer;
 }
 .navbar :first-child{
@@ -24,5 +26,20 @@
 }
 .userData{
     font-size: 1rem;
-    
+    margin-bottom: 20px;
+    display: flex;
+}
+.userData img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+   margin-top: 20px;
+}
+.navbar_items{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    line-height: .6rem;
+    margin-right: 10px;
 }

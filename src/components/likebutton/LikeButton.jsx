@@ -1,13 +1,23 @@
-import { useDispatch } from "react-redux"
+
+import { useSelector } from "react-redux";
 
 
-function LikeButton() {
-    const dispatch = useDispatch()
+function LikeButton({ post }) {
+
+  const { loginedUser } = useSelector((state) => state.auth);
   return (
-    <div >
-        <i class="fa-solid fa-heart"></i>
-        </div>
-  )
+    <div
+      style={{
+        color: post.likes.includes(loginedUser._id) ? "#6d67e4" : "black",
+      }}
+    //   onClick={dispatch(likeButtonClicked({
+    //    userId: loginedUser._id,
+    //    postId:post._id
+    //   }))} 
+       >
+      <i class="fa-solid fa-heart"></i>
+    </div>
+  );
 }
 
-export default LikeButton
+export default LikeButton;

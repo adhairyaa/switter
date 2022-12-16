@@ -64,31 +64,15 @@ export const getAllUserPostsHandler = function (schema, request) {
  * */
 
 export const createPostHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
+  
   try {
-    if (!user) {
-      return new Response(
-        404,
-        {},
-        {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
-        }
-      );
-    }
+   
     const { postData } = JSON.parse(request.requestBody);
     const post = {
       _id: uuid(),
-      ...postData,
-      likes: {
-        likeCount: 0,
-        likedBy: [],
-        dislikedBy: [],
-      },
-      username: user.username,
-      createdAt: formatDate(),
-      updatedAt: formatDate(),
+      likes: [],
+     content: postData.content,
+     user: postData.user,
     };
     this.db.posts.insert(post);
     return new Response(201, {}, { posts: this.db.posts });

@@ -7,7 +7,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: 2.5rem;
+    font-size: 2rem;
     align-items:flex-start ;
     box-shadow: 0 0 9px #6d67e4
 
@@ -16,10 +16,16 @@
 width: 3rem;
 height: 3rem;
 border-radius: 50%;
+margin-top: 10px;
+margin-left: 10px;
 }
 .userbarUsers{
     display: flex;
     margin-left: 10px;
+    border: solid 2px #d3d3df;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 19rem;
 }
 .userbarUsers p{
 font-size: 1rem;

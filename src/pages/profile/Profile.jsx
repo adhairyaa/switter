@@ -6,7 +6,7 @@ import Userbar from "../../components/userbar/Userbar";
 import styles from "./profile.module.css";
 import { getPosts } from "../../features/posts/postSlice";
 import { getUsers } from "../../features/user/userSlice";
-
+// import landing from "./landing.jpg";
 function Profile() {
   const userOnProfile = useParams();
   const dispatch = useDispatch();
@@ -35,6 +35,7 @@ function Profile() {
       (user) => user.username === userOnProfile.username
     );
     console.log(currentPosts);
+    console.log(currentUserOnProfile)
 
     return (
       <div className={styles.profile}>
@@ -42,7 +43,7 @@ function Profile() {
         <Userbar />
 
         <div className={styles.userProfile}>
-          <img src="landing.jpg" alt="profileImage"></img>
+          <img src={currentUserOnProfile[0].userImage} alt="profileImage"></img>
           <div className={styles.userName}>
             <p>{currentUserOnProfile[0].name}</p>
             <p>@{currentUserOnProfile[0].username}</p>
@@ -57,16 +58,17 @@ function Profile() {
         currentPosts.map((user) => (
           <div className={styles.userTweets}>
             <div className={styles.userInfo}>
-              <img src="landing.jpg" alt="userimage"></img>
+              <img src={user.user.userImage} alt="userimage"></img>
               <div>
                 <p>{"@" + user.user.username}</p>
                 <p>{user.content}</p>
                 <i class="fa-solid fa-heart"></i>
-                {user.likes}
+                {user.likes.length}
               </div>
             </div>
           </div>
         )))}
+        
       </div>
     );
   }

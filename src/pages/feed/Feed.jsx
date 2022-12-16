@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {getPosts} from '../../features/posts/postSlice'
 import LikeButton from "../../components/likebutton/LikeButton";
+import AddTweet from "../../components/addTweet/AddTweet";
 function Feed() {
   const  {posts ,status}  = useSelector((state) => state.posts);
   const dispatch = useDispatch();
@@ -21,28 +22,23 @@ function Feed() {
       <Userbar />
       {(status==="fulfilled")&&(
       <div className={styles.feed}>
-        <div className={styles.postTweet}>
-          <div>
-            <img src="landing.jpg" alt="profile" />
-            <input placeholder="whats happening.."></input>
-          </div>
-          <button>Sweet</button>
-        </div>
-        {posts.posts.map((user) => (
-          <Link to={`/profile/${user.user.username}`}> 
+        <AddTweet />
+        {posts.posts.map((post) => (
+           
           <div className={styles.userTweets}>
             <div className={styles.userInfo}>
               <img src="landing.jpg" alt="userimage"></img>
-              <div>
+              <Link to={`/profile/${post.user.username}`}><div>
                 <p>
-                  {user.user.name}
-                  {"@" + user.user.username}
+                  {post.user.name}
+                  {"@" + post.user.username}
                 </p>
-                <p>{user.content}</p>
-                <LikeButton/>{' '+ user.likes}
-              </div>
+                <p>{post.content}</p>
+               <div><LikeButton post={post}/>{post.likes.length}</div> 
+              </div></Link>
+              
             </div>
-          </div></Link>
+          </div>
         ))}
       </div>)}
     </div>
