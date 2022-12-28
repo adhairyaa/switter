@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { formatDate } from "../utils/authUtils";
+// import { formatDate } from "../utils/authUtils";
 
 /**
  * Posts can be added here.
@@ -10,7 +10,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " taque earum riores repellat.",
-    likes: [1,3,4,5],
+    likes: [1, 3, 4, 5],
     user: {
       _id: uuid(),
       name: "Tich",
@@ -18,10 +18,11 @@ export const posts = [
       password: "adarshBalika123",
       userImage: "https://unsplash.com/photos/TdWb9zMFLzY",
     },
-  },{
+  },
+  {
     _id: uuid(),
     content: " I am the guest",
-    likes: [1,3,4,5],
+    likes: [1, 3, 4, 5],
     user: {
       _id: uuid(),
       name: "guest",
@@ -33,7 +34,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " Caio people.",
-    likes: [2,5],
+    likes: [2, 5],
     user: {
       _id: uuid(),
       name: "dhairya",
@@ -57,7 +58,7 @@ export const posts = [
   {
     _id: uuid(),
     content: " what is up I am here",
-    likes: [1,6],
+    likes: [1, 6],
     user: {
       _id: uuid(),
       name: "Kent",
@@ -69,7 +70,7 @@ export const posts = [
   {
     _id: uuid(),
     content: "mustang is here",
-    likes:[],
+    likes: [],
     user: {
       _id: uuid(),
       name: "Robin",

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./userbar.module.css";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getUsers } from "../../features/user/userSlice";
 import { Link } from "react-router-dom";
 function Userbar() {

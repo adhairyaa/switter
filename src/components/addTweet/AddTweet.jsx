@@ -13,15 +13,14 @@ function AddTweet() {
         <input
           placeholder="whats happening.."
           onChange={(e) => setPostInput(e.target.value)}
-            value={postInput}
-            id = "postInput"
+          value={postInput}
+          id="postInput"
         ></input>
       </div>
       <button
         onClick={() => {
           setPostInput("");
           dispatch(addPost({ userId: loginedUser._id, postData: postInput }));
-          
         }}
       >
         Sweet
